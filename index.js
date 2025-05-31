@@ -22,4 +22,4 @@ fetch('https://api.github.com/users/dcamacho2002/repos')
     .catch(function (error) {
         console.error('An error occurred:', error);
         console.log('Project section empty.');
-    })
+    }) 
