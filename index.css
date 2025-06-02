@@ -1,0 +1,48 @@
+/* Desktop style */
+
+body {
+    background-color: black;
+    color: yellow;
+    font-weight: bold;
+}
+
+nav {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 75px;
+}
+
+#data1, #data1 ul, #data2, #data2 ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+#data1 ul, #data2 ul{
+    margin-bottom: 50px;
+}
+
+
+/* Tablet style */
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Mobile style */
+@media (max-width: 600px) {
+    body {
+        font-size: 20px;
+    }
+}
