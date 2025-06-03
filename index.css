@@ -7,9 +7,14 @@ body {
 }
 
 nav {
-    font-size: 18px;
     display: flex;
     justify-content: space-around;
+}
+
+button {
+    background-color: yellow;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 h1 {
@@ -21,13 +26,13 @@ h2 {
     margin-top: 75px;
 }
 
-#data1, #data1 ul, #data2, #data2 ul {
+#data, #data ul {
     list-style-type: none;
     text-align: center;
     padding: 0;
 }
 
-#data1 ul, #data2 ul{
+#data ul, #data ul{
     margin-bottom: 50px;
 }
 
@@ -38,11 +43,23 @@ h2 {
     body {
         font-size: 18px;
     }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    button {
+        font-size: 25px;
+    }
 }
 
 /* Mobile style */
 @media (max-width: 600px) {
     body {
         font-size: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
     }
 }
