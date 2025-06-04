@@ -13,30 +13,26 @@ planetButton.addEventListener('click', function() {
             return response.json();
         })
         .then(data => {
-            display1.innerHTML = "<h2>Notable Planets</h2><ul>";
-            data.results.forEach((planet) => {
-                fetch(planet.url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Request failed');
-                        }
-                        return response.json();
-                    })
-                    .then((planetData) => {
-                        display1.innerHTML += `<li>
-                        ${planetData.result.properties.name}
-                        <ul>
-                        <li>Climate: ${planetData.result.properties.climate}</li>
-                        <li>Population: ${planetData.result.properties.population}</li>
-                        <li>Terrain: ${planetData.result.properties.terrain}</li>
-                        </ul>
-                        </li>`;
-                    })
-                    .catch(error => {
-                        console.error('An error occurred:', error);
-                    })
-            })
-            display1.innerHTML += "</ul>";
+            const randomPlanet = data.results[Math.floor(Math.random() * data.results.length)];
+            fetch(randomPlanet.url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Request failed');
+                    }
+                    return response.json();
+                })
+                .then((planetData) => {
+                    display1.innerHTML = `<h2>Notable Planet</h2><ul><li>
+                    ${planetData.result.properties.name}
+                    <ul>
+                    <li>Climate: ${planetData.result.properties.climate}</li>
+                    <li>Population: ${planetData.result.properties.population}</li>
+                    <li>Terrain: ${planetData.result.properties.terrain}</li>
+                    </ul>`;
+                })
+                .catch(error => {
+                    console.error('An error occurred:', error);
+                })
         })
         .catch(error => {
             console.error('An error occurred:', error);
@@ -54,30 +50,26 @@ characterButton.addEventListener('click', function() {
             return response.json();
         })
         .then(data => {
-            display2.innerHTML = "<h2>Notable Characters</h2><ul>";
-            data.results.forEach((people) => {
-                fetch(people.url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Request failed');
-                        }
-                        return response.json();
-                    })
-                    .then((peopleData) => {
-                        display2.innerHTML += `<li>
-                        ${peopleData.result.properties.name}
-                        <ul>
-                        <li>Birth Year: ${peopleData.result.properties.birth_year}</li>
-                        <li>Gender: ${peopleData.result.properties.gender}</li>
-                        <li>Height: ${peopleData.result.properties.height}cm</li>
-                        </ul>
-                        </li>`;
-                    })
-                    .catch(error => {
-                        console.error('An error occurred:', error);
-                    })
-            })
-            display2.innerHTML += "</ul>";
+            const randomCharacter = data.results[Math.floor(Math.random() * data.results.length)]; 
+            fetch(randomCharacter.url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Request failed');
+                    }
+                    return response.json();
+                })
+                .then((peopleData) => {
+                    display2.innerHTML = `<h2>Notable Character</h2><ul><li>
+                    ${peopleData.result.properties.name}
+                    <ul>
+                    <li>Birth Year: ${peopleData.result.properties.birth_year}</li>
+                    <li>Gender: ${peopleData.result.properties.gender}</li>
+                    <li>Height: ${peopleData.result.properties.height}cm</li>
+                    </ul>`;
+                })
+                .catch(error => {
+                    console.error('An error occurred:', error);
+                })
         })
         .catch(error => {
             console.error('An error occurred:', error);

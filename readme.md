@@ -8,5 +8,4 @@ How to run:
 
 2. Open index.html in web browser
 
-3. Use navigation section to take you to a list of characters or planets featured in Star Wars
-	- Each navigation button will load 10 characters/planets at random
+3. Use navigation section to randomly generate a character or planet featured in Star Wars
